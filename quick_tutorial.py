@@ -3,7 +3,7 @@ from larpix.io.fakeio import FakeIO
 from larpix.logger.stdout_logger import StdoutLogger 
 
 ### Run this program to output a sample. If there are no errors when running this program, you are all set.
-
+### Notes of the code (Controller, Chips, and Packet modules are located in the Github file, quick_tutorial_explanation.py)
 ### The sample output is a series of data information. Translating the data will be included in the near future.
 
 print('\n') # new lines for spacing out the printed items for easier analysis
