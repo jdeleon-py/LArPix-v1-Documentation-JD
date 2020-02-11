@@ -51,7 +51,7 @@ controller.logger.enable() ### enables the logger
 #	- To interact with chip keys directly, use a valid keystring ('#-#-#')
 #
 ##########################################################################################
-chip1 = controller.add_chip('1-1-1') ### activates a chip to be used for testing
+chip1 = controller.add_chip('1-1-5') ### activates a chip to be used for testing, (<IO Group>, <IO Channel>, <Chip ID>)
 chip1.config.global_threshold = 25 
-print(controller.write_configuration('1-1-1'))
+print(controller.write_configuration('1-1-5'))
 ##########################################################################################
