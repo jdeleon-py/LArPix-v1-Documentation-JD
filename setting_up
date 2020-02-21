@@ -1,1 +1,36 @@
-This is a squence of instuctions to install and successfully test the LArPix board.
+This is a sequence of instuctions to install and successfully test the LArPix board.
+
+First off, this is under the assumption that your machine has the capability to install and remove things with the 
+pip command.
+
+This first part can be installed without connecting to the physical board.
+
+1. Open the terminal on your machine. 
+      - If you are using MAC, use the MAC terminal.
+      (From my experience, the native operating system a MAC uses matches up nicely with the larpix board.)
+      
+      - The next best operating system would be that of Ubuntu supported natively or via
+        Virtual Machine, which can be downloaded onto your computer.
+      
+2. Make a directory to store all your larpix software and files
+      - Use the command: 'mkdir larpix'
+      
+      * Side note:
+          The command: 'ls' lets you observe all the contents in your current directory.
+          The command: 'cd <directory_name>' lets you go into the directory file named 'directory-name'.
+          The command: 'cd ..' moves back a layer in relation to which directory you are currently in.
+        
+      Use the command: 'cd larpix' to go into your larpix directory file.
+      
+3. Clone the larpix-control repositry from Github and install
+      *Inside your larpix directory*
+      
+      - Use the command: 'git clone --branch release https://github.com/larpix/larpix-control'
+        (This creates a repository, or sub-directory, in the larpix directory you just created.)
+       
+      - Go into the larpix-control repository.
+        Use the command: 'cd larpix-control'
+        (Check if your larpix-control repository is even there in the first place by using the command: 'ls')
+        
+      
+   
