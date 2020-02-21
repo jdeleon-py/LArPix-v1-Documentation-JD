@@ -29,7 +29,7 @@ controller.io = FakeIO() ### initiates the Controller's ability to handle input 
 controller.logger = StdoutLogger(buffer_length = 0) ### initiates the Controller's ability to store data
 ### buffer_length is an argument that represents the number of packets
 
-controller.logger.enable() ### enables the logger 
+controller.logger.enable() ### starts tracking all communications 
 ### after all data has been collected and stored, the logger.disable() method is used to cleanse the system of all loose data
 ##########################################################################################
 
