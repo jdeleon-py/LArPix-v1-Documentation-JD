@@ -32,5 +32,51 @@ This first part can be installed without connecting to the physical board.
         Use the command: 'cd larpix-control'
         (Check if your larpix-control repository is even there in the first place by using the command: 'ls')
         
+      - Inside the larpix-control repository,
+        Use the command: 'pip install -e.'
+        
+      - Go back to the larpix directory using the command 'cd ..'
       
-   
+4. Clone the larpix-scripts repository (only clone, no need to install)
+      - Inside the larpix directory,
+        Use the command: 'git clone https://github.com/larpix/larpix-scripts'
+
+5. Clone larpix-geometry repository and install
+      - Inside the larpix directory,
+        Use the command: 'git clone https://github.com/samkohn/larpix-geometry'
+      
+      - Go inside the larpix-geometry repository using the 'cd larpix-geometry' command and
+        Use the command: 'pip install -e
+      
+      - Go back to the larpix directory main menu using the command: 'cd ..'
+        
+6. Clone larpix-backup repository
+      (Only necessary if you wanted to to backup files to another location)
+      - Use the command: 'git clone https://github.com/samkohn/larpix-backup'
+
+7. You have now installed all the necessary software, but now it's time to check whether all your software 
+   VERSIONS are up to date. Not having the correct versions of software will prevent you from 
+   using certain tests.
+      - Side Note: To check the version of a piece of software,
+        Use the command: '<software_name> --version'
+      
+      - Side Note: In the event you have an outdated piece of software,
+        Use the command: 'pip uninstall <thing>' to uninstall the current version
+        Use the command: 'pip install <thing>==<version>' to install with the corrected version
+      
+      - Side Note: Do not worry about installing these following packages in a specific 
+        folder/repository/directory. The 'pip' command installs things globally, 
+        so it will find the correct folder for you.
+        
+      - (Package, correct version):
+            (pytest, 4.6.9)
+            (pytest-arraydiff, 0.3)
+            (pytest-astropy, 0.5.0)
+            (pytest-doctestplus, 0.3.0)
+            (pytest-openfiles, 0.3.2)
+            (pytest-remotedata, 0.3.1)
+            
+8. Run a test to ensure all systems operational.
+      - Go to the larpix-control repository
+      - Run the command: 'pytest'
+      If the test passes give or take a few warnings, you're good to go!
