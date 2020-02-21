@@ -1,4 +1,4 @@
-This is a sequence of instuctions to install and successfully test the LArPix board.
+This is a sequence of instructions to install and successfully test the LArPix board.
 
 First off, this is under the assumption that your machine has the capability to install and remove things with the 
 pip command.
@@ -22,7 +22,7 @@ This first part can be installed without connecting to the physical board.
         
       Use the command: 'cd larpix' to go into your larpix directory file.
       
-3. Clone the larpix-control repositry from Github and install
+3. Clone the larpix-control repository from Github and install
       *Inside your larpix directory*
       
       - Use the command: 'git clone --branch release https://github.com/larpix/larpix-control'
@@ -46,7 +46,7 @@ This first part can be installed without connecting to the physical board.
         Use the command: 'git clone https://github.com/samkohn/larpix-geometry'
       
       - Go inside the larpix-geometry repository using the 'cd larpix-geometry' command and
-        Use the command: 'pip install -e
+        Use the command: 'pip install -e.'
       
       - Go back to the larpix directory main menu using the command: 'cd ..'
         
