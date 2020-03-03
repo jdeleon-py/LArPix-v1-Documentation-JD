@@ -77,7 +77,7 @@ packet_data.register_data # >>> 32
 packet_data.test_counter # >>> 20601
 
 # Now that we know how to read this data, how can we export this to a file?
-datafile = h5py.File('test1')
+datafile = h5py.File('test001')
 
 # With every file, there are keys that access certain parts of the file
 list(datafile.keys())
