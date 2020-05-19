@@ -1,16 +1,22 @@
+# This is a rough setup going through the process of a trial of data collection.
+# This particular file uses an OOP structure to make the process as user-friendly as possible.
+# The trial will be the initialization of the object and the functions that follow will be ways in which the 
+# data can be taken, received, written to a file, and plotted.
+# Reminder: for the FakeIO interface, the data collected can be only yield one value in one snapshot of time from a specific channel.
+
 from larpix.larpix import *
 from larpix.io.fakeio import FakeIO
 from larpix.logger.h5_logger import HDF5Logger
 import h5py
 import numpy as np
 import matplotlib.pyplot as plt
-import packet_database
+import packet_database as p # <v1_packet_database>
 
 class Data_Collection:
 
     def __init__(self, name_of_file, chip_id):
-        self.data_packets = Data_Manipulated_Hex()
-        self.time_packets = Time_Manipulated_Hex()
+        self.data_packets = p.Data_Manipulated_Hex()
+        self.time_packets = p.Time_Manipulated_Hex()
         
         self.save_to_file = name_of_file
         self.chip_id = chip_id
@@ -63,7 +69,7 @@ class Data_Collection:
 
         packet_data = run[index] # >>> bitarray('00')
         
-        #print("Packet Type: " + str(packet_data.packet_type)) # >>> 1
+        # print("Packet Type: " + str(packet_data.packet_type)) # >>> 1
         print("Chip ID: " + str(packet_data.chipid)) # >>> 1
         print("Chip Key: " + str(packet_data.chip_key))
         print("Parity Bit Value: " + str(packet_data.parity_bit_value)) # >>> 1
