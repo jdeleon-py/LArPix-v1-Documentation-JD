@@ -100,3 +100,21 @@ class Data_Collection:
         plt.ylabel("ADC Data")
         plt.scatter(refined_data_arr[0], refined_data_arr[1], color = 'black')
         plt.show()
+        
+
+# Example of a run:
+'''
+trial = Data_Collection(name_of_file = 'trial001', chip_id = '1-1-5')
+
+trial.data_trial(packet_key = b'\x04\x14\x80\xc4\x032 ', time = 0.05, message = 'trial001') #p.data_packet2
+
+trial.retrieve_data()
+
+trial.data_specs(index = 0) # since there is only one packet available
+
+trial.read_file()
+
+trial.data_array
+
+trial.plot_data(title = "Channel 5 Snapshot")
+'''
