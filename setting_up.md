@@ -25,8 +25,10 @@ This first part can be installed without connecting to the physical board.
 3. Clone the larpix-control repository from Github and install
       *Inside your larpix directory*
       
-      - Use the command: 'git clone --branch release https://github.com/larpix/larpix-control'
+      - Use the command: 'git clone https://github.com/larpix/larpix-control' -b v2.3.0
         (This creates a repository, or sub-directory, in the larpix directory you just created.)
+        This also installs everything with the working version 2.3.0, which is a safe 'complete' larpix-control package.
+        Future versions will utilize larpix-control v3.2.1
        
       - Go into the larpix-control repository.
         Use the command: 'cd larpix-control'
@@ -36,6 +38,10 @@ This first part can be installed without connecting to the physical board.
         Use the command: 'pip install -e.'
         
       - Go back to the larpix directory using the command 'cd ..'
+
+      -For good measure, install the larpix-control software via pip as well.
+        Use the command: 'pip install larpix-control==2.3.0'
+        Minor tests for now will only utilize the version 2.3.0 software.
       
 4. Clone the larpix-scripts repository (only clone, no need to install)
       - Inside the larpix directory,
