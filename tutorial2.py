@@ -27,9 +27,9 @@ controller1.logger.enable()
 #   - For the sake of information, I will go through the process of initiating a Chip object
 chip1 = controller1.add_chip('1-0-0')
 
-chip1.config.global_threshold = 25 # Config is a method to set parameters to our Chip object
-chip1.config.periodic_reset = 1 # The global_threshold method may be the most important one for us to use.
-chip1.config.channel_mask[20] = 1 # These parameters are not required for the functionality of this tutorial
+# chip1.config.global_threshold = 25 # Config is a method to set parameters to our Chip object
+# chip1.config.periodic_reset = 1 # The global_threshold method may be the most important one for us to use.
+# chip1.config.channel_mask[20] = 1 # These parameters are not required for the functionality of this tutorial
 
 controller1.write_configuration('1-0-0') # Configures all chip registers with the chip ID '1-2-3' to prepare for testing
 
