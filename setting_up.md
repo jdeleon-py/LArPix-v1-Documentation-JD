@@ -1,88 +1,169 @@
 This is a sequence of instructions to install and successfully test the LArPix board.
 
 First off, this is under the assumption that your machine has the capability to install and remove things with the 
-pip command.
+pip command. Secondly, this tutorial is made under the assuption that the user has access to Jupyter notebooks, 
+but it is not strictly required. Third, this installation tutorial will be completed with the application of 
+virtual environments with Pythonvia the built-in venv command. This tutorial will install multiple versions of the 
+larpix software, and thus will remain organized with localized virtual environments.
+Below is a brief rundown of venv's.
 
-This first part can be installed without connecting to the physical board.
+* Note: to install jupyter notebooks, deactivate any envs and go back to the global package manager.
+* Install jupyterlab with command >>> pip install jupyterlab
 
-1. Open the terminal on your machine. 
-      - If you are using MAC, use the MAC terminal.
-      (From my experience, the native operating system a MAC uses matches up nicely with the larpix board.)
-      
-      - The next best operating system would be that of Ubuntu supported natively or via
-        Virtual Machine, which can be downloaded onto your computer.
-      
-2. Make a directory to store all your larpix software and files
-      - Use the command: 'mkdir larpix'
-      
-      * Side note:
-          The command: 'ls' lets you observe all the contents in your current directory.
-          The command: 'cd <directory_name>' lets you go into the directory file named 'directory-name'.
-          The command: 'cd ..' moves back a layer in relation to which directory you are currently in.
-        
-      Use the command: 'cd larpix' to go into your larpix directory file.
-      
-3. Clone the larpix-control repository from Github and install
-      *Inside your larpix directory*
-      
-      - Use the command: 'git clone https://github.com/larpix/larpix-control -b v2.3.0'
-        (This creates a repository, or sub-directory, in the larpix directory you just created.)
-        This also installs everything with the working version 2.3.0, which is a safe 'complete' larpix-control package.
-        Future versions will utilize larpix-control v3.2.1
-       
-      - Go into the larpix-control repository.
-        Use the command: 'cd larpix-control'
-        (Check if your larpix-control repository is even there in the first place by using the command: 'ls')
-        
-      - Inside the larpix-control repository,
-        Use the command: 'pip install -e.'
-        
-      - Go back to the larpix directory using the command 'cd ..'
 
-      -For good measure, install the larpix-control software via pip as well.
-        Use the command: 'pip install larpix-control==2.3.0'
-        Minor tests for now will only utilize the version 2.3.0 software.
-      
-4. Clone the larpix-scripts repository (only clone, no need to install)
-      - Inside the larpix directory,
-        Use the command: 'git clone https://github.com/larpix/larpix-scripts'
+**Virtual Environments with Python (VENV)**
+---------------------------------------------------------------------------------------------------------------------------------
+Virtual Environments are a means of separating python packages based on the specific project being worked on.
+Packages are isolated to the env itself, so any updates that can be made are particlar 
+to the env and does not interfere with any other project.
 
-5. Clone larpix-geometry repository and install
-      - Inside the larpix directory,
-        Use the command: 'git clone https://github.com/samkohn/larpix-geometry'
-      
-      - Go inside the larpix-geometry repository using the 'cd larpix-geometry' command and
-        Use the command: 'pip install -e.'
-      
-      - Go back to the larpix directory main menu using the command: 'cd ..'
-        
-6. Clone larpix-backup repository
-      (Only necessary if you wanted to to backup files to another location)
-      - Use the command: 'git clone https://github.com/samkohn/larpix-backup'
+For instance, a data science project may have an environment with packages:
+  - numpy
+  - pandas
+  - matplotlib
+  - etc...
 
-7. You have now installed all the necessary software, but now it's time to check whether all your software 
-   VERSIONS are up to date. Not having the correct versions of software will prevent you from 
-   using certain tests.
-      - Side Note: To check the version of a piece of software,
-        Use the command: '<software_name> --version'
-      
-      - Side Note: In the event you have an outdated piece of software,
-        Use the command: 'pip uninstall <thing>' to uninstall the current version
-        Use the command: 'pip install <thing>==<version>' to install with the corrected version
-      
-      - Side Note: Do not worry about installing these following packages in a specific 
-        folder/repository/directory. The 'pip' command installs things globally, 
-        so it will find the correct folder for you.
-        
-      - (Package, correct version):
-            (pytest, 4.6.9)
-            (pytest-arraydiff, 0.3)
-            (pytest-astropy, 0.5.0)
-            (pytest-doctestplus, 0.3.0)
-            (pytest-openfiles, 0.3.2)
-            (pytest-remotedata, 0.3.1)
-            
-8. Run a test to ensure all systems operational.
-      - Go to the larpix-control repository
-      - Run the command: 'pytest'
-      If the test passes give or take a few warnings, you're good to go!
+A web dev project may have a separate env with packages:
+  - requests
+  - django
+  - flask
+  - etc...
+
+Where envs come in handy is when the user has multiple projects that require similar environments. 
+For instance, consider a situation where the user has an old data science project running optimally with an old version 
+of numpy and the user wanted to create a new data science project with a newer version of numpy. If all python packages
+are installed globally/systematically without an env, then the numpy package will update to service the new project and 
+thereby break the older project. However, with envs aiding both projects, both versions of numpy can exist isolated 
+within each specific project environment and everybody is happy.
+
+This concept is applicable to the larpix project in the sense that multiple versions of larpix-control are released
+in the testing process. To keep code and files maintained to the point where an update of the larpix-control software
+does not break the code or files created, envs for each larpix-control version is created to govern how files are processed.
+
+Basic commands for venv:
+  - create a project directory >>> mkdir project
+  - >>> cd project
+  - create a virtual environment >>> python3 -m venv <venv_name>
+  - activate the virtual environment >>> source <venv_name>/bin/activate
+  - (Deactivate anytime using the command >>> deactivate)
+  - The env is now activated and the user is free to install the necessary packages to the project,
+    and free to move about any directory that pertains to the project's env
+
+This tutorial will create two virtual envs - one for larpix-control==2.3.0 and the other for larpix-control==3.2.2
+
+
+**Directory Tree for larpix project**
+---------------------------------------------------------------------------------------------------------------------------------
+|larpix
+    |larpix_v2_3_0
+        |description.txt
+        |larpix-backup
+            |...
+        |larpix-control (v2.3.0)
+            |...
+        |larpix-geometry
+            |...
+        |larpix-scripts
+            |...
+        |venv_larpix_v2_3_0
+            |...
+    |larpix_v3_2_2
+        |description.txt
+        |larpix-backup
+            |...
+        |larpix-control (v3.2.2)
+            |...
+        |larpix-geometry
+            |...
+        |larpix-scripts
+            |...
+        |venv_larpix_v3_2_2
+            |...
+    |Project_LArPix
+        |project_scripts
+        |data_files (to be put into a database later)
+        |...
+  
+
+**Installation**
+---------------------------------------------------------------------------------------------------------------------------------
+1. larpix_v2_3_0
+  - In the larpix base directory, make a directory allocated to larpix-control==2.3.0 specifically 
+      >>> mkdir larpix_v2_3_0
+  
+  - Create a virtual environment for larpix-control==2.3.0 
+      >>> python3 -m venv venv_larpix_v2_3_0
+  
+  - Activate the virtual environment to install packages 
+      >>> source venv_larpix_v2_3_0/bin/activate
+  
+  - While venv is activated, install larpix-control package 
+      >>> pip install larpix-control==2.3.0
+
+  - Clone scripts/directories from github to reference back to
+      >>> larpix-control: git clone https://github.com/larpix/larpix-control.git -b v2.3.0
+      >>> larpix-scripts: git clone https://github.com/larpix/larpix-scripts.git
+      >>> larpix-geometry: git clone https://github.com/samkohn/larpix-geometry.git
+      >>> larpix-backup: git clone https://github.com/samkohn/larpix-backup.git
+
+  - While venv is activated, install pytest to make sure everything is operational
+      >>> pip install pytest==4.6.9
+      >>> pip install pytest-arraydiff==0.3
+      >>> pip install pytest-astropy==0.5.0
+      >>> pip install pytest-doctestplus==0.3.0
+      >>> pip install pytest-openfiles==0.3.2
+      >>> pip install pytest-remotedata==0.3.1
+
+  - While venv is activated, estbalish a kernel with the working venv as a Jupyter notebook (to analyze data)
+      >>> pip install ipykernel
+      >>> ipython kernel --user --name=venv_larpix_v2_3_0
+      When you make a new notebook, choose the kernel of the notebook to be venv_larpix_v2_3_0
+
+  - While venv is activated, make sure all systems are operational with pytest
+      Go into the larpix-control directory
+      >>> pytest
+      The test should pass with a couple of warnings leftover.
+
+  - Deactivate the venv to install the other packages
+      >>> deactivate
+
+
+2. larpix_v3_2_2
+  - In the larpix base directory, make a directory allocated to larpix-control==3.2.2 specifically 
+      >>> mkdir larpix_v3_2_2
+  
+  - Create a virtual environment for larpix-control==3.2.2 
+      >>> python3 -m venv venv_larpix_v3_2_2
+  
+  - Activate the virtual environment to install packages 
+      >>> source venv_larpix_v3_2_2/bin/activate
+  
+  - While venv is activated, install larpix-control package 
+      >>> pip install larpix-control==3.2.2
+
+  - Clone scripts/directories from github to reference back to
+      >>> larpix-control: git clone https://github.com/larpix/larpix-control.git -b v3.2.2
+      >>> larpix-scripts: git clone https://github.com/larpix/larpix-scripts.git
+      >>> larpix-geometry: git clone https://github.com/samkohn/larpix-geometry.git
+      >>> larpix-backup: git clone https://github.com/samkohn/larpix-backup.git
+
+  - While venv is activated, install pytest to make sure everything is operational
+      >>> pip install pytest==4.6.9
+      >>> pip install pytest-arraydiff==0.3
+      >>> pip install pytest-astropy==0.5.0
+      >>> pip install pytest-doctestplus==0.3.0
+      >>> pip install pytest-openfiles==0.3.2
+      >>> pip install pytest-remotedata==0.3.1
+
+  - While venv is activated, estbalish a kernel with the working venv as a Jupyter notebook (to analyze data)
+      >>> pip install ipykernel
+      >>> ipython kernel --user --name=venv_larpix_v3_2_2
+      When you make a new notebook, choose the kernel of the notebook to be venv_larpix_v3_2_2
+
+  - While venv is activated, make sure all systems are operational with pytest
+      Go into the larpix-control directory
+      >>> pytest
+      The test should pass with a couple of warnings leftover.
+
+  - Deactivate the venv to install the other packages
+      >>> deactivate
