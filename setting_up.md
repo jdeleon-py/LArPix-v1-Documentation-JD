@@ -54,13 +54,13 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
 
 **Directory Tree for larpix project**
 ---------------------------------------------------------------------------------------------------------------------------------
-|larpix \n
-    |larpix_v2_3_0 \n 
-        |description.txt \n
-        |larpix-backup \n
-            |... \n
-        |larpix-control (v2.3.0) \n
-            |... \n
+|larpix <br />
+    |larpix_v2_3_0 <br />
+        |description.txt <br />
+        |larpix-backup
+            |...
+        |larpix-control (v2.3.0)
+            |...
         |larpix-geometry
             |...
         |larpix-scripts
