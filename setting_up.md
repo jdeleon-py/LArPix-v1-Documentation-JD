@@ -127,6 +127,7 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
   - Deactivate the venv to install the other packages
       >>> deactivate
 
+<br />
 
 2. larpix_v3_2_2
   - In the larpix base directory, make a directory allocated to larpix-control==3.2.2 specifically 
@@ -167,3 +168,4 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
 
   - Deactivate the venv to install the other packages
       >>> deactivate
+
