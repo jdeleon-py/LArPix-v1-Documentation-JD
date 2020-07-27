@@ -55,34 +55,34 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
 **Directory Tree for larpix project**
 ---------------------------------------------------------------------------------------------------------------------------------
 |larpix <br />
-    |larpix_v2_3_0 <br />
-        |description.txt <br />
-        |larpix-backup
-            |...
-        |larpix-control (v2.3.0)
-            |...
-        |larpix-geometry
-            |...
-        |larpix-scripts
-            |...
-        |venv_larpix_v2_3_0
-            |...
-    |larpix_v3_2_2
-        |description.txt
-        |larpix-backup
-            |...
-        |larpix-control (v3.2.2)
-            |...
-        |larpix-geometry
-            |...
-        |larpix-scripts
-            |...
-        |venv_larpix_v3_2_2
-            |...
-    |Project_LArPix
-        |project_scripts
-        |data_files (to be put into a database later)
-        |...
+----|larpix_v2_3_0 <br />
+--------|description.txt <br />
+--------|larpix-backup <br />
+------------|... <br />
+--------|larpix-control (v2.3.0) <br />
+------------|... <br />
+--------|larpix-geometry <br />
+------------|... <br />
+--------|larpix-scripts <br />
+------------|... <br />
+--------|venv_larpix_v2_3_0 <br />
+------------|... <br />
+----|larpix_v3_2_2 <br />
+--------|description.txt <br />
+--------|larpix-backup <br />
+------------|... <br />
+--------|larpix-control (v3.2.2) <br />
+------------|... <br />
+--------|larpix-geometry <br />
+------------|... <br />
+--------|larpix-scripts <br />
+------------|... <br />
+--------|venv_larpix_v3_2_2 <br />
+------------|... <br />
+----|Project_LArPix <br />
+--------|project_scripts <br />
+--------|data_files (to be put into a database later) <br />
+--------|... <br />
   
 
 **Installation**
@@ -101,27 +101,27 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
       >>> pip install larpix-control==2.3.0
 
   - Clone scripts/directories from github to reference back to
-      >>> larpix-control: git clone https://github.com/larpix/larpix-control.git -b v2.3.0
-      >>> larpix-scripts: git clone https://github.com/larpix/larpix-scripts.git
-      >>> larpix-geometry: git clone https://github.com/samkohn/larpix-geometry.git
-      >>> larpix-backup: git clone https://github.com/samkohn/larpix-backup.git
+      >>> larpix-control: git clone https://github.com/larpix/larpix-control.git -b v2.3.0 <br />
+      >>> larpix-scripts: git clone https://github.com/larpix/larpix-scripts.git <br />
+      >>> larpix-geometry: git clone https://github.com/samkohn/larpix-geometry.git <br />
+      >>> larpix-backup: git clone https://github.com/samkohn/larpix-backup.git <br />
 
   - While venv is activated, install pytest to make sure everything is operational
-      >>> pip install pytest==4.6.9
-      >>> pip install pytest-arraydiff==0.3
-      >>> pip install pytest-astropy==0.5.0
-      >>> pip install pytest-doctestplus==0.3.0
-      >>> pip install pytest-openfiles==0.3.2
-      >>> pip install pytest-remotedata==0.3.1
+      >>> pip install pytest==4.6.9 <br />
+      >>> pip install pytest-arraydiff==0.3 <br />
+      >>> pip install pytest-astropy==0.5.0 <br />
+      >>> pip install pytest-doctestplus==0.3.0 <br />
+      >>> pip install pytest-openfiles==0.3.2 <br />
+      >>> pip install pytest-remotedata==0.3.1 <br />
 
   - While venv is activated, estbalish a kernel with the working venv as a Jupyter notebook (to analyze data)
-      >>> pip install ipykernel
-      >>> ipython kernel --user --name=venv_larpix_v2_3_0
-      When you make a new notebook, choose the kernel of the notebook to be venv_larpix_v2_3_0
+      >>> pip install ipykernel <br />
+      >>> ipython kernel --user --name=venv_larpix_v2_3_0 <br />
+      When you make a new notebook, choose the kernel of the notebook to be venv_larpix_v2_3_0 <br />
 
   - While venv is activated, make sure all systems are operational with pytest
       Go into the larpix-control directory
-      >>> pytest
+      >>> pytest <br />
       The test should pass with a couple of warnings leftover.
 
   - Deactivate the venv to install the other packages
@@ -142,27 +142,27 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
       >>> pip install larpix-control==3.2.2
 
   - Clone scripts/directories from github to reference back to
-      >>> larpix-control: git clone https://github.com/larpix/larpix-control.git -b v3.2.2
-      >>> larpix-scripts: git clone https://github.com/larpix/larpix-scripts.git
-      >>> larpix-geometry: git clone https://github.com/samkohn/larpix-geometry.git
-      >>> larpix-backup: git clone https://github.com/samkohn/larpix-backup.git
+      >>> larpix-control: git clone https://github.com/larpix/larpix-control.git -b v3.2.2 <br />
+      >>> larpix-scripts: git clone https://github.com/larpix/larpix-scripts.git <br />
+      >>> larpix-geometry: git clone https://github.com/samkohn/larpix-geometry.git <br />
+      >>> larpix-backup: git clone https://github.com/samkohn/larpix-backup.git <br />
 
   - While venv is activated, install pytest to make sure everything is operational
-      >>> pip install pytest==4.6.9
-      >>> pip install pytest-arraydiff==0.3
-      >>> pip install pytest-astropy==0.5.0
-      >>> pip install pytest-doctestplus==0.3.0
-      >>> pip install pytest-openfiles==0.3.2
-      >>> pip install pytest-remotedata==0.3.1
+      >>> pip install pytest==4.6.9 <br />
+      >>> pip install pytest-arraydiff==0.3 <br />
+      >>> pip install pytest-astropy==0.5.0 <br />
+      >>> pip install pytest-doctestplus==0.3.0 <br />
+      >>> pip install pytest-openfiles==0.3.2 <br />
+      >>> pip install pytest-remotedata==0.3.1 <br />
 
   - While venv is activated, estbalish a kernel with the working venv as a Jupyter notebook (to analyze data)
-      >>> pip install ipykernel
-      >>> ipython kernel --user --name=venv_larpix_v3_2_2
-      When you make a new notebook, choose the kernel of the notebook to be venv_larpix_v3_2_2
+      >>> pip install ipykernel <br />
+      >>> ipython kernel --user --name=venv_larpix_v3_2_2 <br />
+      When you make a new notebook, choose the kernel of the notebook to be venv_larpix_v3_2_2 <br />
 
   - While venv is activated, make sure all systems are operational with pytest
       Go into the larpix-control directory
-      >>> pytest
+      >>> pytest <br />
       The test should pass with a couple of warnings leftover.
 
   - Deactivate the venv to install the other packages
