@@ -116,7 +116,7 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
 
   - While venv is activated, estbalish a kernel with the working venv as a Jupyter notebook (to analyze data)
       >>> pip install ipykernel <br />
-      >>> ipython kernel --user --name=venv_larpix_v2_3_0 <br />
+      >>> ipython kernel --name "env_kernel_name" --user <br />
       When you make a new notebook, choose the kernel of the notebook to be venv_larpix_v2_3_0 <br />
 
   - While venv is activated, make sure all systems are operational with pytest
@@ -158,7 +158,7 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
 
   - While venv is activated, estbalish a kernel with the working venv as a Jupyter notebook (to analyze data)
       >>> pip install ipykernel <br />
-      >>> ipython kernel --user --name=venv_larpix_v3_2_2 <br />
+      >>> ipython kernel --name "env_kernel_name" --user <br />
       When you make a new notebook, choose the kernel of the notebook to be venv_larpix_v3_2_2 <br />
 
   - While venv is activated, make sure all systems are operational with pytest
