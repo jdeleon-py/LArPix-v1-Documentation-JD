@@ -49,7 +49,8 @@ Basic commands for venv:
   - The env is now activated and the user is free to install the necessary packages to the project,
     and free to move about any directory that pertains to the project's env
 
-This tutorial will create two virtual envs - one for larpix-control==2.3.0 and the other for larpix-control==3.2.2
+This tutorial will create two virtual envs - one for larpix-control==2.3.0 and the 
+other for larpix-control==3.4.0 (most recent version)
 
 
 **Directory Tree for larpix project**
@@ -67,17 +68,17 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
 ------------|... <br />
 --------|venv_larpix_v2_3_0 <br />
 ------------|... <br />
-----|larpix_v3_2_2 <br />
+----|larpix_v3_4_0 <br />
 --------|description.txt <br />
 --------|larpix-backup <br />
 ------------|... <br />
---------|larpix-control (v3.2.2) <br />
+--------|larpix-control (v3.4.0) <br />
 ------------|... <br />
 --------|larpix-geometry <br />
 ------------|... <br />
 --------|larpix-scripts <br />
 ------------|... <br />
---------|venv_larpix_v3_2_2 <br />
+--------|venv_larpix_v3_4_0 <br />
 ------------|... <br />
 ----|Project_LArPix <br />
 --------|project_scripts <br />
@@ -114,7 +115,7 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
       >>> pip install pytest-openfiles==0.3.2 <br />
       >>> pip install pytest-remotedata==0.3.1 <br />
 
-  - While venv is activated, estbalish a kernel with the working venv as a Jupyter notebook (to analyze data)
+  - While venv is activated, estbalish a kernel with the working venv as a Jupyter notebook (to analyze data) {OPTIONAL}
       >>> pip install ipykernel <br />
       >>> ipython kernel --name "env_kernel_name" --user <br />
       When you make a new notebook, choose the kernel of the notebook to be venv_larpix_v2_3_0 <br />
@@ -129,21 +130,21 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
 
 <br />
 
-2. larpix_v3_2_2
-  - In the larpix base directory, make a directory allocated to larpix-control==3.2.2 specifically 
-      >>> mkdir larpix_v3_2_2
+2. larpix_v3_4_0
+  - In the larpix base directory, make a directory allocated to larpix-control==3.4.0 specifically 
+      >>> mkdir larpix_v3_4_0
   
-  - Create a virtual environment for larpix-control==3.2.2 
-      >>> python3 -m venv venv_larpix_v3_2_2
+  - Create a virtual environment for larpix-control==3.4.0 
+      >>> python3 -m venv venv_larpix_v3_4_0
   
   - Activate the virtual environment to install packages 
-      >>> source venv_larpix_v3_2_2/bin/activate
+      >>> source venv_larpix_v3_4_0/bin/activate
   
   - While venv is activated, install larpix-control package 
-      >>> pip install larpix-control==3.2.2
+      >>> pip install larpix-control==3.4.0
 
   - Clone scripts/directories from github to reference back to
-      >>> larpix-control: git clone https://github.com/larpix/larpix-control.git -b v3.2.2 <br />
+      >>> larpix-control: git clone https://github.com/larpix/larpix-control.git -b v3.4.0 <br />
       >>> larpix-scripts: git clone https://github.com/larpix/larpix-scripts.git <br />
       >>> larpix-geometry: git clone https://github.com/samkohn/larpix-geometry.git <br />
       >>> larpix-backup: git clone https://github.com/samkohn/larpix-backup.git <br />
@@ -156,10 +157,10 @@ This tutorial will create two virtual envs - one for larpix-control==2.3.0 and t
       >>> pip install pytest-openfiles==0.3.2 <br />
       >>> pip install pytest-remotedata==0.3.1 <br />
 
-  - While venv is activated, estbalish a kernel with the working venv as a Jupyter notebook (to analyze data)
+  - While venv is activated, estbalish a kernel with the working venv as a Jupyter notebook (to analyze data) {OPTIONAL}
       >>> pip install ipykernel <br />
       >>> ipython kernel --name "env_kernel_name" --user <br />
-      When you make a new notebook, choose the kernel of the notebook to be venv_larpix_v3_2_2 <br />
+      When you make a new notebook, choose the kernel of the notebook to be venv_larpix_v3_4_0 <br />
 
   - While venv is activated, make sure all systems are operational with pytest
       Go into the larpix-control directory
